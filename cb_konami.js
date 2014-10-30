@@ -49,7 +49,7 @@
     Konami.prototype.action = function (callback) {
 
         callback();
-        this.resetKey();
+        this.reset();
 
     };
 
