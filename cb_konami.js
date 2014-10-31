@@ -1,5 +1,5 @@
 /*!
- * jquery.cb_konami.js v0.9
+ * jquery.cb_konami.js v0.9.1
  * Auther @maechabin
  * Licensed under mit license
  */
@@ -46,21 +46,7 @@
 
     };
 
-    Konami.prototype.action = function (callback) {
-
-        callback();
-        this.reset();
-
-    };
-
-    Konami.prototype.reset = function () {
-
-        this.key_array = [];
-        this.key_count = 0;
-
-    };
-
-    Konami.prototype.init = function () {
+    Konami.prototype.addEvent = function () {
 
         var d = this.element;
         var that = this;
@@ -82,12 +68,31 @@
             });
 
         }
+    
+    };
 
+    Konami.prototype.action = function (callback) {
+
+        callback();
+        this.reset();
+
+    };
+
+    Konami.prototype.reset = function () {
+
+        this.key_array = [];
+        this.key_count = 0;
+
+    };
+
+    Konami.prototype.init = function () {
+
+        this.addEvent();
         return this;
 
     };
 
-    $.fn.cb_konami = function (callback) {
+    $.fn.cbKonami = function (callback) {
 
         return this.each(function () {
 
