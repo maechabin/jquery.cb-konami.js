@@ -44,3 +44,11 @@ $(window).cbKonami(function () {
 });
 </script>
 ```
+
+##デモ
+
+[http://jsrun.it/maechabin/6DxD](http://jsrun.it/maechabin/6DxD)
+
+##ライセンス
+
+MIT license
