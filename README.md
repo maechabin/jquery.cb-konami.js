@@ -1,11 +1,11 @@
-## Instructions
+##jquery.cb-Konami.js
+
+WebサイトにKonamiコマンドを実装するjQueryプラグイン。
 
 ```
-$(window).ch_konami(function {
+$(window).cbKonami(function {
 	alert("konami");
 });
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> 2737fd0a9c8f13aef6fc3eb0284ffaaa4983b10f
+
+##
