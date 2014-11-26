@@ -1,7 +1,12 @@
 #jquery.cb-Konami.js
 
 WebサイトにKonamiコマンドを実装するjQueryプラグイン。
-以下の例では、キーボードの[↑] + [↑] + [↓] + [↓] + [←] + [→] + [←] + [→] + [B] + [A] を叩くと、「konami」とアラートが表示されます。
+
+##概要
+キーボードでKonamiコマンド**「上上下下左右左右BA」**を打った後に、何か任意の処理を実行させる機能を実装することができます。  
+  
+以下の例では、キーボードの[↑] + [↑] + [↓] + [↓] + [←] + [→] + [←] + [→] + [B] + [A] 
+を打った後に、「konami」とアラートが表示されます。
 ```
 $(window).cbKonami(function () {
 	alert("konami");
@@ -19,5 +24,23 @@ jQueryとjquery.cb-Konami.jsをページに読み込みます。
 ```
 <script>
 $(window).cbKonami();
+</script>
+```
+###実装例1
+```
+<script>
+var foo = function () {
+	console.log(bar):
+};
+$(window).cbKonami(foo);
+</script>
+```
+
+###実装例2
+```
+<script>
+$(window).cbKonami(function () {
+	console.log(bar);
+});
 </script>
 ```
