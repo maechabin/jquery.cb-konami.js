@@ -1,5 +1,5 @@
 /*!
- * jquery.cb_konami.js v0.9.1
+ * jquery.cbkonami.js v1.0.0
  * Auther @maechabin
  * Licensed under mit license
  */

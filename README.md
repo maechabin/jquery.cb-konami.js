@@ -25,7 +25,6 @@ jQueryとjquery.cb-Konami.jsをページに読み込みます。
 <script>
 $(window).cbKonami();
 </script>
-<<<<<<< HEAD
 ```
 ###実装例1
 ```
@@ -45,24 +44,3 @@ $(window).cbKonami(function () {
 });
 </script>
 ```
-=======
-```
-###実装例1
-```
-<script>
-var foo = function () {
-	console.log(bar):
-};
-$(window).cbKonami(foo);
-</script>
-```
-
-###実装例2
-```
-<script>
-$(window).cbKonami(function () {
-	console.log(bar);
-});
-</script>
-```
->>>>>>> c5c0e867154389b3aa76c05b4c765f121b37d421
