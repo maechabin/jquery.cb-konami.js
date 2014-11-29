@@ -30,7 +30,7 @@ $(window).cbKonami();
 ```
 <script>
 var foo = function () {
-	console.log(bar):
+	console.log("bar"):
 };
 $(window).cbKonami(foo);
 </script>
@@ -40,7 +40,7 @@ $(window).cbKonami(foo);
 ```
 <script>
 $(window).cbKonami(function () {
-	console.log(bar);
+	console.log("bar");
 });
 </script>
 ```
