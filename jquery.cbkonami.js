@@ -1,5 +1,5 @@
 /*!
- * jquery.cbkonami.js v1.0.0
+ * jquery.cbkonami.js v1.0.1
  * Auther @maechabin
  * Licensed under mit license
  */
@@ -12,7 +12,7 @@
         this.command = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
         this.key_array = [];
         this.key_count = 0;
-        this.callback = (callback) ? callback : function () {alert("Hello Konami.")};
+        this.callback = (callback) ? callback : function () {alert("Hello Konami.");};
 
     };
 
@@ -40,7 +40,7 @@
 
         if (this.key_count === c) {
 
-            this.action(this.callback);
+            this.action();
 
         }
 
@@ -71,9 +71,9 @@
     
     };
 
-    Konami.prototype.action = function (callback) {
+    Konami.prototype.action = function () {
 
-        callback();
+        this.callback();
         this.reset();
 
     };
@@ -102,4 +102,4 @@
 
     };
 
-})(jQuery, window, document);
+} (jQuery, window, document));
