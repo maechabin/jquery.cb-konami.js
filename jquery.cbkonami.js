@@ -1,10 +1,23 @@
 /*!
- * jquery.cbkonami.js v1.0.1
+ * jquery.cbkonami.js v1.0.2
  * Auther @maechabin
  * Licensed under mit license
  */
+;(function (factory) {
 
-;(function ($, window, document, undefined) {
+  if (typeof module === "object" && typeof module.exports === "object") {
+
+    factory(require("jquery"), window, document);
+
+  } else {
+
+    factory(jQuery, window, document);
+
+  }
+
+} (function ($, window, document, undefined) {
+
+    "use strict";
 
     var Konami = function (element, callback) {
 
@@ -12,7 +25,7 @@
         this.command = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
         this.key_array = [];
         this.key_count = 0;
-        this.callback = (callback) ? callback : function () {alert("Hello Konami.");};
+        this.callback = callback || function () {alert("Hello Konami.");};
 
     };
 
@@ -34,9 +47,6 @@
             this.reset();
 
         }
-
-        //console.log(this.key_array);
-        //console.log(this.key_count);
 
         if (this.key_count === c) {
 
@@ -102,4 +112,4 @@
 
     };
 
-} (jQuery, window, document));
+}));

@@ -5,12 +5,25 @@
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
 /*!
- * jquery.cbkonami.js v1.0
+ * jquery.cbkonami.js v1.0.2
  * Auther @maechabin
  * Licensed under mit license
  */
+;(function (factory) {
 
-;(function ($, window, document, undefined) {
+  if (typeof module === "object" && typeof module.exports === "object") {
+
+    factory(require("jquery"), window, document);
+
+  } else {
+
+    factory(jQuery, window, document);
+
+  }
+
+} (function ($, window, document, undefined) {
+
+    "use strict";
 
     var Konami = function (element, callback) {
 
@@ -18,7 +31,7 @@
         this.command = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
         this.key_array = [];
         this.key_count = 0;
-        this.callback = (callback) ? callback : function () {alert("Hello Konami.")};
+        this.callback = callback || function () {alert("Hello Konami.");};
 
     };
 
@@ -41,32 +54,15 @@
 
         }
 
-        //console.log(this.key_array);
-        //console.log(this.key_count);
-
         if (this.key_count === c) {
 
-            this.action(this.callback);
+            this.action();
 
         }
 
     };
 
-    Konami.prototype.action = function (callback) {
-
-        callback();
-        this.resetKey();
-
-    };
-
-    Konami.prototype.reset = function () {
-
-        this.key_array = [];
-        this.key_count = 0;
-
-    };
-
-    Konami.prototype.init = function () {
+    Konami.prototype.addEvent = function () {
 
         var d = this.element;
         var that = this;
@@ -88,12 +84,31 @@
             });
 
         }
+    
+    };
 
+    Konami.prototype.action = function () {
+
+        this.callback();
+        this.reset();
+
+    };
+
+    Konami.prototype.reset = function () {
+
+        this.key_array = [];
+        this.key_count = 0;
+
+    };
+
+    Konami.prototype.init = function () {
+
+        this.addEvent();
         return this;
 
     };
 
-    $.fn.cb_konami = function (callback) {
+    $.fn.cbKonami = function (callback) {
 
         return this.each(function () {
 
@@ -103,10 +118,10 @@
 
     };
 
-})(jQuery, window, document);
+}));
 
 $(document).cb_konami(function () {
-    alert("Konami");
+    alert("Hello Konami");
 });
 
 </script>
