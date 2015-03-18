@@ -1,5 +1,5 @@
 /*!
- * jquery.cbkonami.js v1.0.2
+ * jquery.cbkonami.js v1.0.3
  * Auther @maechabin
  * Licensed under mit license
  */
@@ -7,7 +7,7 @@
 
   if (typeof module === "object" && typeof module.exports === "object") {
 
-    factory(require("jquery"), window, document);
+    module.exports = factory(require("jquery"), window, document);
 
   } else {
 
